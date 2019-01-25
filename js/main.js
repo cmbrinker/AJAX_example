@@ -1,5 +1,6 @@
 var request = XMLHttpRequest();
 var button = document.getElementById('btn');
+var bookDiv = document.getElementById('book-info');
 
 request.open('GET', 'https://learnwebcode.github.io/json-e...');
 request.onload = function() {
@@ -16,3 +17,9 @@ button.addEventListener('click', function() {
   };
   request.send();
 });
+
+function renderHTML(data) {
+  var string = "";
+
+  bookDiv.insertAdjacentHTML('beforeend', string)
+}
