@@ -3,7 +3,7 @@ button {
   float: center;
   color: white;
   background-color: green;
-  margin-left: 4em;
+  margin-left: 2em;
   font-size: .9em;
   padding: 8px;
 }
@@ -12,4 +12,5 @@ h1 {
   display: inline-block;
   margin: 2em;
   text-align: center;
+  font: helvetica;
 }
