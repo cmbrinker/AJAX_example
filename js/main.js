@@ -1,16 +1,9 @@
-var request = XMLHttpRequest();
 var button = document.getElementById('btn');
 var bookDiv = document.getElementById('book-info');
 
-request.open('GET', 'https://learnwebcode.github.io/json-e...');
-request.onload = function() {
-  var bookData = ourRequest.responseText;
-  console.log(bookData[0]);
-};
-request.send();
-
 button.addEventListener('click', function() {
-  request.open('GET', 'https://learnwebcode.github.io/json-e...');
+  var request = new XMLHttpRequest();
+  request.open('GET', 'https://learnwebcode.github.io/json-example/animals-2.json');
   request.onload = function() {
     var bookData = JSON.parse(ourRequest.responseText);
     renderHTML(bookData);
@@ -20,6 +13,10 @@ button.addEventListener('click', function() {
 
 function renderHTML(data) {
   var string = "";
+
+  for(i=0; i<data.length; i++) {
+    htmlString += "<p>" + data[i].name + " is a " + data[i].species + ".</p>";
+  }
 
   bookDiv.insertAdjacentHTML('beforeend', string)
 }
